@@ -8,8 +8,7 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-        $db_config = get_db_config();
-        var_dump($db_config);
+        
         return view('static_pages/home');
     }
 
