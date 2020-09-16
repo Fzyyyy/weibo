@@ -22,4 +22,4 @@ Route::resource('users', 'UsersController');
 //用户登录/退出
 Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
-Route::post('logout', 'SessionsController@destroy')->name('logout');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
