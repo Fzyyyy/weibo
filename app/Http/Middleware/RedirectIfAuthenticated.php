@@ -20,7 +20,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
 //            return redirect(RouteServiceProvider::HOME);
-            session()->flash('info', '您已登录，无需重复操作。');
+            $message = $request->is('signup') ? '您已注册并登陆' : '您已登录，无需再次操作';
+            session()->flash('info', $message);
             return redirect('/');
         }
 
